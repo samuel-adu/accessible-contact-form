@@ -1,0 +1,342 @@
+/* reset =================================== */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: 'Karla';
+  src: url('./assets/fonts/Karla-VariableFont_wght.ttf')
+      format('woff2 supports variations'),
+    url('./assets/fonts/Karla-VariableFont_wght.ttf') format('woff2-variations');
+  font-weight: 400 700;
+}
+
+:root {
+  --font-fallback: BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-sans;
+  --ff-primary: Karla, var(--font-fallback);
+
+  --green-200: hsl(148, 38%, 91%);
+  --green-600: hsl(169, 82%, 27%);
+  --green-900: hsl(169, 82%, 17%);
+  --red: hsl(0, 66%, 54%);
+
+  --white: hsl(0, 0%, 100%);
+  --grey-500: hsl(186, 15%, 59%);
+  --grey-900: hsl(187, 24%, 22%);
+
+  --fw-bold: 700;
+  --fw-regular: 400;
+
+  --clr-primary: var(--green-600);
+
+  --surface-1: var(--green-200);
+  --surface-2: var(--white);
+
+  --text-1: var(--grey-500);
+  --text-2: var(--grey-900);
+
+  --clr-error: var(--red);
+
+  --border-radius-l: 16px;
+  --border-radius-m: 10px;
+  --border-radius-s: 4px;
+
+  background-color: var(--surface-1);
+  color: var(--text-1);
+}
+
+/* base styles ============================================ */
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100svh;
+  font-family: var(--ff-primary);
+}
+
+img {
+  max-width: 100%;
+}
+
+/* layout ================================================== */
+
+.main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: calc(100svh - 80px);
+  margin-bottom: auto;
+  width: 100%;
+}
+
+.container {
+  padding-inline: 1.5rem;
+  width: 100%;
+  max-width: 740px;
+}
+
+.footer {
+  height: 80px;
+  width: 100%;
+  padding-block: 2.5rem;
+}
+
+/* global styles ============================================== */
+.form {
+  background-color: var(--surface-2);
+  padding: 1.5rem;
+  margin-block: 1.5rem;
+  border-radius: var(--border-radius-l);
+  /* width: 340px; */
+}
+
+.form-field {
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.form-control {
+  display: block;
+  border: 1px solid var(--text-1);
+  border-radius: var(--border-radius-s);
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.error-message {
+  color: var(--clr-error);
+  font-size: 0.75rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+input[type='radio'] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--grey-500);
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+input[type='checkbox'] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 17px;
+  height: 17px;
+  border: 2px solid var(--grey-500);
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+input[type='checkbox']:checked {
+  border-color: var(--green-600);
+}
+
+input[type='checkbox']:checked::after {
+  content: url('/assets/images/icon-checkbox-check.svg');
+  user-select: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* state styles =============================================== */
+
+.btn:hover {
+  background-color: var(--green-900);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 1px solid var(--clr-primary);
+  border: 1px solid var(--clr-primary);
+}
+
+.form-control.error {
+  border: 1px solid var(--clr-error);
+}
+
+input[type='radio']:checked {
+  border-color: var(--green-600);
+}
+
+input[type='radio']:checked::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--green-600);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* component styles =============================== */
+label,
+legend {
+  display: block;
+  color: var(--text-2);
+  font-size: 1rem;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.radio-group .form-control {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.radio-group label {
+  margin-bottom: 0;
+}
+
+.radio-group :nth-child(2) {
+  margin-bottom: 0;
+}
+
+.heading {
+  color: var(--text-2);
+  margin-bottom: 2rem;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.checkbox label {
+  margin-bottom: 0;
+}
+
+fieldset {
+  border: 0;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+  height: 200px;
+  padding: 20px;
+  border-radius: var(--border-radius-s);
+  border: 1px solid var(--text-1);
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1rem;
+  background-color: var(--clr-primary);
+  width: 100%;
+  outline: none;
+  color: var(--white);
+  border: 0;
+  border-radius: var(--border-radius-s);
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.toast {
+  /* display: none; */
+  background-color: var(--grey-900);
+  padding: 1.5rem;
+  color: var(--white);
+  border-radius: var(--border-radius-m);
+  position: absolute;
+  left: 50%;
+  top: 2rem;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 450px;
+}
+
+.toast__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+}
+
+.toast__heading {
+  font-size: 1.125rem;
+  font-weight: var(--fw-bold);
+  color: var(--white);
+}
+
+.toast__body {
+  font-weight: var(--fw-regular);
+  color: var(--grey-500);
+}
+
+.attribution {
+  font-size: 0.875rem;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* utitlities ============================== */
+.visually-hidden {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-inline: 2.5rem;
+  }
+
+  .form {
+    padding: 2.5rem;
+  }
+
+  .name,
+  .query-type {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .name > *,
+  .query-type > * {
+    flex: 1;
+  }
+
+  textarea {
+    height: 100px;
+  }
+
+  .radio-group .form-control {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-inline: 0;
+  }
+}
