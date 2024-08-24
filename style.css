@@ -350,4 +350,8 @@ textarea {
   .container {
     padding-inline: 0;
   }
+
+  .form {
+    margin-block: 0;
+  }
 }
