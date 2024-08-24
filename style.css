@@ -74,7 +74,7 @@ img {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  min-height: calc(100svh - 80px);
+  min-height: calc(100svh - 4rem);
   margin-bottom: auto;
   width: 100%;
 }
@@ -86,9 +86,8 @@ img {
 }
 
 .footer {
-  height: 80px;
   width: 100%;
-  padding-block: 2.5rem;
+  padding-block: 1.5rem;
 }
 
 /* global styles ============================================== */
