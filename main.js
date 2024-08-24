@@ -30,14 +30,14 @@ function handleSubmit(event) {
   // valdate inputs
   const firstName = contactFormData.get('firstName');
   if (firstName === '') {
-    fristNameErrorEl.innerText = 'this field is required';
+    fristNameErrorEl.innerText = 'This field is required';
     fristNameInput.classList.add('error');
     isValid = false;
   }
 
   const lastName = contactFormData.get('lastName');
   if (lastName === '') {
-    lastNameErrorEl.innerText = 'this field is required';
+    lastNameErrorEl.innerText = 'This field is required';
     lastNameInput.classList.add('error');
     isValid = false;
   }
@@ -45,24 +45,24 @@ function handleSubmit(event) {
   const email = contactFormData.get('email');
   const isValidEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]/;
   if (email === '') {
-    emailErrorEl.innerText = 'this field is required';
+    emailErrorEl.innerText = 'This field is required';
     emailInput.classList.add('error');
     isValid = false;
   } else if (!isValidEmail.test(email)) {
-    emailErrorEl.innerText = 'please enter a valid email address';
+    emailErrorEl.innerText = 'Please enter a valid email address';
     emailInput.classList.add('error');
     isValid = false;
   }
 
   const queryType = contactFormData.get('queryType');
   if (!queryType) {
-    queryTypeErrorEl.innerText = 'please select a query type';
+    queryTypeErrorEl.innerText = 'Please select a query type';
     isValid = false;
   }
 
   const message = contactFormData.get('message').trim();
   if (message === '') {
-    messageErrorEl.innerText = 'this field is required';
+    messageErrorEl.innerText = 'This field is required';
     messageInput.classList.add('error');
     isValid = false;
   }
@@ -70,7 +70,7 @@ function handleSubmit(event) {
   const subscribe = contactFormData.get('subscribe');
   if (!subscribe) {
     subscribeErrorEl.innerText =
-      'to submit this form, please consent to being contacted';
+      'To submit this form, please consent to being contacted';
     isValid = false;
   }
 
