@@ -3,8 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
     <link
       rel="icon"
       type="image/png"
@@ -12,19 +10,19 @@
       href="./assets/images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="style.css" />
-
     <title>Frontend Mentor | Contact form</title>
   </head>
   <body>
     <main class="main">
       <div class="container">
-        <form class="form" action="">
+        <form id="contact-form" class="form" action="get" novalidate>
           <h1 class="heading">Contact Us</h1>
 
           <div class="name">
             <div class="form-field">
               <label for="first-name">
-                First Name <span class="visually-hidden">required</span>
+                First Name
+                <span class="required-icon" aria-hidden="true">*</span>
               </label>
               <input
                 class="form-control"
@@ -32,43 +30,61 @@
                 type="text"
                 name="firstName"
                 id="first-name"
+                aria-describedby="first-name-error"
               />
-              <span id="error-message" class="error-message">
-                This field is required
-              </span>
+              <span
+                aria-live="polite"
+                id="first-name-error"
+                class="error-message"
+              ></span>
             </div>
 
             <div class="form-field">
-              <label for="last-name">Last Name</label>
+              <label for="last-name">
+                Last Name
+                <span class="required-icon" aria-hidden="true">*</span>
+              </label>
               <input
                 class="form-control"
                 required
                 type="text"
                 name="lastName"
                 id="last-name"
+                aria-describedby="last-name-error"
               />
-              <span id="error-message" class="error-message">
-                This field is required
-              </span>
+              <span
+                aria-live="polite"
+                id="last-name-error"
+                class="error-message"
+              ></span>
             </div>
           </div>
 
           <div class="form-field">
-            <label for="email">Email Address</label>
+            <label for="email">
+              Email Address
+              <span class="required-icon" aria-hidden="true">*</span>
+            </label>
             <input
               class="form-control"
               required
               type="email"
               name="email"
               id="email"
+              aria-describedby="email-error"
             />
-            <span id="error-message" class="error-message">
-              Please enter a valid email address
-            </span>
+            <span
+              aria-live="polite"
+              id="email-error"
+              class="error-message"
+            ></span>
           </div>
 
           <fieldset class="form-field">
-            <legend>Query Type</legend>
+            <legend>
+              Query Type
+              <span class="required-icon" aria-hidden="true">*</span>
+            </legend>
             <div class="radio-group">
               <div class="query-type">
                 <div class="form-control">
@@ -78,6 +94,7 @@
                     type="radio"
                     name="queryType"
                     id="general-enquiry"
+                    aria-describedby="query-type-error"
                   />
                   <label for="general-enquiry">General Enquiry</label>
                 </div>
@@ -89,41 +106,61 @@
                     type="radio"
                     name="queryType"
                     id="support-request"
+                    aria-describedby="query-type-error"
                   />
                   <label for="support-request">Support Request</label>
                 </div>
               </div>
-              <span id="error-message" class="error-message">
-                Please select a query type
-              </span>
+              <span
+                aria-live="polite"
+                id="query-type-error"
+                class="error-message"
+              ></span>
             </div>
           </fieldset>
 
           <div class="form-field">
-            <label for="message">Message</label>
-            <textarea class="form-control" name="Message" id="message">
-            </textarea>
-            <span id="error-message" class="error-message">
-              This field is required
-            </span>
+            <label for="message">
+              Message
+              <span class="required-icon" aria-hidden="true">*</span>
+            </label>
+            <textarea
+              class="form-control"
+              name="message"
+              id="message"
+              aria-describedby="message-error"
+            ></textarea>
+            <span
+              aria-live="polite"
+              id="message-error"
+              class="error-message"
+            ></span>
           </div>
 
           <div class="form-field">
             <div class="checkbox">
-              <input required type="checkbox" name="subscribe" id="subscribe" />
+              <input
+                required
+                type="checkbox"
+                name="subscribe"
+                id="subscribe"
+                aria-describedby="subscribe-error"
+              />
               <label for="subscribe">
                 I consent to being contacted by the team
               </label>
             </div>
-            <span id="error-message" class="error-message">
-              To submit this form, please consent to being contacted
-            </span>
+            <span
+              aria-live="polite"
+              id="subscribe-error"
+              class="error-message"
+            ></span>
           </div>
 
           <button class="btn">Submit</button>
         </form>
 
-        <div class="toast">
+        <div id="toast" class="toast">
           <div class="toast__header">
             <img
               class="toast__icon"
@@ -146,5 +183,7 @@
         >. Coded by <a href="https://www.samueladu.dev">Samuel Adu</a>.
       </p>
     </footer>
+
+    <script src="./main.js"></script>
   </body>
 </html>

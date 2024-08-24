@@ -59,6 +59,7 @@ body {
   flex-direction: column;
   min-height: 100svh;
   font-family: var(--ff-primary);
+  width: 100vw;
 }
 
 img {
@@ -145,20 +146,10 @@ input[type='checkbox'] {
   cursor: pointer;
   position: relative;
 }
-input[type='checkbox']:checked {
-  border-color: var(--green-600);
-}
 
-input[type='checkbox']:checked::after {
-  content: url('/assets/images/icon-checkbox-check.svg');
-  user-select: none;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.required-icon {
+  color: var(--green-600);
 }
-
 /* state styles =============================================== */
 
 .btn:hover {
@@ -186,6 +177,20 @@ input[type='radio']:checked::before {
   height: 12px;
   border-radius: 50%;
   background-color: var(--green-600);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input[type='checkbox']:checked {
+  border-color: var(--green-600);
+}
+
+input[type='checkbox']:checked::after {
+  content: url('/assets/images/icon-checkbox-check.svg');
+  user-select: none;
+  cursor: pointer;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -262,7 +267,7 @@ textarea {
 }
 
 .toast {
-  /* display: none; */
+  display: none;
   background-color: var(--grey-900);
   padding: 1.5rem;
   color: var(--white);
