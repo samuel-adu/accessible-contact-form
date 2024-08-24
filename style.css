@@ -110,8 +110,9 @@ img {
   display: block;
   border: 1px solid var(--text-1);
   border-radius: var(--border-radius-s);
-  padding: 10px 20px;
+  padding: 15px 20px;
   width: 100%;
+  font-size: 1rem;
 }
 
 .error-message {
@@ -214,6 +215,11 @@ legend {
   flex-wrap: nowrap;
   margin-bottom: 1rem;
   gap: 1rem;
+}
+
+.radio-group .form-control:hover,
+.radio-group .form-control:focus {
+  background-color: var(--green-200);
 }
 
 .radio-group label {
